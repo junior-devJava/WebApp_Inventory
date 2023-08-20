@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Result</title>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+  </head>
+<body>
+  <h1>Form</h1>
+    <p th:text="'id: ' + ${addArticle.id}" />
+    <p th:text="'articleName: '  + ${addArticle.articleName}" />
+    <p th:text="'serialNumber: ' + ${addArticle.serialNumber}" />
+    <p th:text="'location: '     + ${addArticle.location}" />
+    <p th:text="'responsible: '  + ${addArticle.responsible}" />
+    <p th:text="'groupName: '    + ${addArticle.groupName}" />
+    <a href="/home">Submit message</a>
+</body>
