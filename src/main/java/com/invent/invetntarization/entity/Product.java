@@ -1,27 +1,28 @@
 package com.invent.invetntarization.entity;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
-@Table(name = "inventory")
-public class InventoryEntity {
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Product {
+
     @Id
     private int id;
-
-    private String articleName;
-    private String serialNumber;
+    private String name;
     private String location;
     private String responsible;
-    private String groupName;
+    private String serial_number;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 }
